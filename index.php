@@ -1,6 +1,6 @@
 ﻿<html>
 <head>
-<title>Магазин</title>
+<title>PS-Store</title>
 <script src='jquery.js'></script>
 <script src='jquery-ui.js'></script>
 <script src='jquery-ui.min.js'></script>
@@ -94,7 +94,7 @@ $(function(){
         duration: 1000
       }
     });
-$( "#dialog4" ).dialog( "option", "height", 430 );    
+$( "#dialog4" ).dialog( "option", "height", 430 );
 $( "#dialog4" ).dialog( "option", "width", 700 );
     $( "#m1" ).click(function(){
 		$("#dialog1").dialog('open')
@@ -151,12 +151,12 @@ $( "#dialog4" ).dialog( "option", "width", 700 );
 					for($i=0;$i<counttovar;$i++){
 					zamov=zamov+$('#Nazvatovariv'+$i).html()+' - К-сть '+$('#ki'+$i).val()+'<br>'
 					}
-					
-					
-					
-					
-					
-					
+
+
+
+
+
+
 
 					var full=$('#full').html()
 					var name=$('#name').val()
@@ -247,4 +247,3 @@ $( "#dialog4" ).dialog( "option", "width", 700 );
 <div id='dialog4' title='Замовлення'>Замовлення</div>
 </body>
 </html>
-
