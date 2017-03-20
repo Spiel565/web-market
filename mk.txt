@@ -1,0 +1,24 @@
+		$('.komirku div').click(function(){
+			if($(this).attr(.title)=='')
+			{
+			$(this).removeClass('koshik1').addClass('koshik1').attr('title','ok')
+			}else if($(this).attr('title')=='ok'
+			{
+				$(this).removeClass('koshik2').addClass('koshik1').attr('title','')
+			}
+			counttovar=0
+			namestovar=''
+		$('.koshik2').each(function(){
+				counttovar=counttovar+1
+				namestovar=namestovar+$(this).attr('id')
+			})
+			$('#count').html(counttovar)
+			$.ajax({
+				type:'POST',
+				url'show_tovar.php',
+				data:({counttovar,namestovar}),
+				success:function(data){
+					
+				}
+			})
+		})
