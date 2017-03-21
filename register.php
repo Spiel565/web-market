@@ -1,12 +1,6 @@
-<html>
-<head>
-<title>Реєстація</title>
-</head>
-<body>
-<input id='login' type="text" size='16'>Ел.Почта</input><br>
-<input id='password' type="password" size='16'>Пароль</input>
 <?php
-
+$login=$_POST['login'];
+$password=$_POST['password']; 
 	$host = "localhost";
 	$user = "s34";
 	$password = "R5f7K5u4";
@@ -27,4 +21,3 @@
 
 
 ?>
-</body></html>

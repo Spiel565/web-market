@@ -211,7 +211,7 @@ $( "#dialog4" ).dialog( "option", "width", 700 );
       <button type="submit" class="login-button">Войти</button>
     </p>
     <p class="forgot-password"><a href="forgot-password.php">Забыл пароль?</a></p>
-	<p class="register"><a href="register.php">Зареєструватись</a></p>
+	<p class="register"><a href="register2.php">Зареєструватись</a></p>
   </form>
 <body bgcolor='black'>
 <table border='0' width='70%' id='table1'>
