@@ -1,6 +1,7 @@
+<title>Реєстація в інтернет магазині PS-Store</title>
 <?php
 $login=$_POST['login'];
-$password=$_POST['password'];
+$passsword=$_POST['passsword'];
 	$host = "localhost";
 	$user = "s34";
 	$password = "R5f7K5u4";
@@ -15,9 +16,6 @@ $password=$_POST['password'];
 
 	mysql_query("SET NAMES 'utf8' COLLATE 'utf8_general_ci'");
 	mysql_query("SET CHARACTER SET 'utf8'");
-	mysql_query("INSERT INTO `logpass`(`login`, `password`) VALUES (".$login.",".$password.")");
-
-
-
-
+	mysql_query("INSERT INTO `logpass`(`login`, `password`) VALUES ('$login','$passsword')");
 ?>
+<h1 align='center'>Реєстація пройшла успішно! Попробуйте зайти на сайт!</h1>

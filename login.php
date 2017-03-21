@@ -17,9 +17,9 @@ if (empty($login) or empty($password)) //если пользователь не 
 //удаляем лишние пробелы
     $login = trim($login);
     $password = trim($password);
-    
+
      //Подключаемся к базе данных.
-    $dbcon = mysql_connect("localhost", "s34", "R5f7K5u4"); 
+    $dbcon = mysql_connect("localhost", "s34", "R5f7K5u4");
     mysql_select_db("s34", $dbcon);
     if (!$dbcon)
     {
@@ -43,13 +43,14 @@ $result = mysql_query("SELECT * FROM logpass WHERE login='$login'", $dbcon);
     //если существует, то сверяем пароли
     if ($myrow["password"]==$password) {
     //если пароли совпадают, то запускаем пользователю сессию! Можете его поздравить, он вошел!
-    $_SESSION['login']=$myrow["login"]; 
+    $_SESSION['login']=$myrow["login"];
     $_SESSION['id']=$myrow["id"];//эти данные очень часто используются, вот их и будет "носить с собой" вошедший пользователь
-   header("Location:index.php"); 
+    header("Location:index.php");
+
     }
  else {
-    //если пароли не сошлись
- 
+
+
     exit ("<body><div align='center'><br/><br/><br/>
     <h3>Извините, введённый вами login или пароль неверный." . "<a href='index.php'> <b>Назад</b> </a></h3></div></body>");
     }
