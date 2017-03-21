@@ -1,6 +1,6 @@
 <?php
 $login=$_POST['login'];
-$password=$_POST['password']; 
+$password=$_POST['password'];
 	$host = "localhost";
 	$user = "s34";
 	$password = "R5f7K5u4";
@@ -15,7 +15,7 @@ $password=$_POST['password'];
 
 	mysql_query("SET NAMES 'utf8' COLLATE 'utf8_general_ci'");
 	mysql_query("SET CHARACTER SET 'utf8'");
-	mysql_query("INSERT INTO `logpass`(`login`, `password`) VALUES ($login,$password)")
+	mysql_query("INSERT INTO `logpass`(`login`, `password`) VALUES (".$login.",".$password.")");
 
 
 
