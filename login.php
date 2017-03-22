@@ -1,58 +1,51 @@
-﻿<?php
+<head><title>Вхід в інтернет магазин PS-Store</title></head>
+<body bgcolor='black'>
+  <font color='#00ffd8' face='Comic Sans MS'>
+<?php
 header('Content-Type: text/html; charset=utf-8');
 setlocale(LC_ALL,'ru_RU.65001','rus_RUS.65001','Russian_Russia.65001','russian');
-    session_start();//  вся процедура работает на сессиях. Именно в ней хранятся данные  пользователя, пока он находится на сайте. Очень важно запустить их в  самом начале странички!!!
-if (isset($_POST['login'])) { $login = $_POST['login']; if ($login == '') { unset($login);} } //заносим введенный пользователем логин в переменную $login, если он пустой, то уничтожаем переменную
+    session_start();
+if (isset($_POST['login'])) { $login = $_POST['login']; if ($login == '') { unset($login);} }
     if (isset($_POST['password'])) { $password=$_POST['password']; if ($password =='') { unset($password);} }
-    //заносим введенный пользователем пароль в переменную $password, если он пустой, то уничтожаем переменную
-if (empty($login) or empty($password)) //если пользователь не ввел логин или пароль, то выдаем ошибку и останавливаем скрипт
+if (empty($login) or empty($password))
     {
-    exit ("<body><div align='center'><br/><br/><br/><h3>Вы ввели не всю информацию, вернитесь назад и заполните все поля!" . "<a href='index.php'> <b>Назад</b> </a></h3></div></body>");
+    exit ("<body><div align='center'><br/><br/><br/><h1>Ви ввели не всю інформацчю, вернитесь назад и заповніть всі поля! " . "<a href='index.php'> <b>Назад на головну</b> </a></h1></div></body>");
     }
-    //если логин и пароль введены,то обрабатываем их, чтобы теги и скрипты не работали, мало ли что люди могут ввести
     $login = stripslashes($login);
     $login = htmlspecialchars($login);
     $password = stripslashes($password);
     $password = htmlspecialchars($password);
-//удаляем лишние пробелы
     $login = trim($login);
     $password = trim($password);
-
-     //Подключаемся к базе данных.
     $dbcon = mysql_connect("localhost", "s34", "R5f7K5u4");
     mysql_select_db("s34", $dbcon);
     if (!$dbcon)
     {
-    echo "<p>Произошла ошибка при подсоединении к MySQL!</p>".mysql_error(); exit();
+    echo "<p>Немає з'єднання до MySQL!</p>".mysql_error(); exit();
     } else {
     if (!mysql_select_db("s34", $dbcon))
     {
-    echo("<p>Выбранной базы данных не существует!</p>");
+    echo("<p>Немає з'єднання до MySQL!</p>");
     }
     }
- //извлекаем из базы все данные о пользователе с введенным логином
 $result = mysql_query("SELECT * FROM logpass WHERE login='$login'", $dbcon);
     $myrow = mysql_fetch_array($result);
     if (empty($myrow["password"]))
     {
-    //если пользователя с введенным логином не существует
     exit ("<body><div align='center'><br/><br/><br/>
-    <h3>Извините, введённый вами login или пароль неверный." . "<a href='index.php'> <b>Назад</b> </a></h3></div></body>");
+    <h1>Вибачте ви ввели неправильну Ел.Почту або Пароль. Ви можете відновити пароль. " . "<a href='forgot-password.php'> <b>Нажміть тут, щоб відновити пароль</b> </a>"." <br>"."<a href='index.php'> <b>Назад на головну</b> </a></h1></div></body>");
     }
     else {
-    //если существует, то сверяем пароли
     if ($myrow["password"]==$password) {
-    //если пароли совпадают, то запускаем пользователю сессию! Можете его поздравить, он вошел!
     $_SESSION['login']=$myrow["login"];
-    $_SESSION['id']=$myrow["id"];//эти данные очень часто используются, вот их и будет "носить с собой" вошедший пользователь
+    $_SESSION['id']=$myrow["id"];
     header("Location:index.php");
-
     }
  else {
 
 
     exit ("<body><div align='center'><br/><br/><br/>
-    <h3>Извините, введённый вами login или пароль неверный." . "<a href='index.php'> <b>Назад</b> </a></h3></div></body>");
+    <h1>Вибачте ви ввели неправильну Ел.Почту або Пароль. Ви можете відновити пароль. " . "<a href='forgot-password.php'> <b>Нажміть тут, щоб відновити пароль</b> </a>"." <br>"."<a href='index.php'> <b>Назад на головну</b> </a></h1></div></body>");
     }
     }
     ?>

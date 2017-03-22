@@ -6,7 +6,7 @@
 <script src='jquery-ui.min.js'></script>
 <link rel='stylesheet' type='text/css' href='jquery-ui.min.css'>
 </head>
-<font color='white' face='Comic Sans MS'>
+<font color='#00ffd8' face='Comic Sans MS'>
 <style>
 #table1{
 margin:0px auto;
@@ -181,7 +181,13 @@ $( "#dialog4" ).dialog( "option", "width", 700 );
 						url:'mail.php',
 						data:({name,phone,mail,street,full,zamov,koment,}),
 						success:function(data){
-							alert(data)
+						}
+					})
+					$.ajax({
+						type:'POST',
+						url:'mail2.php',
+						data:({name,phone,mail,street,full,zamov,koment,}),
+						success:function(data){
 						}
 					})
 					var tak=confirm('Ви дійсно хочете замовити цей товар?')
@@ -198,21 +204,12 @@ $( "#dialog4" ).dialog( "option", "width", 700 );
 })
 
 </script>
-  <form method="post" action="login.php" class="login">
-    <p>
-      <label for="login">Логин:</label>
-      <input type="text" name="login" id="login" value="name@example.com">
-    </p>
-    <p>
-      <label for="password">Пароль:</label>
-      <input type="password" name="password" id="password" value="">
-    </p>
-    <p class="login-submit">
-      <button type="submit" class="login-button">Войти</button>
-    </p>
-    <p class="forgot-password"><a href="forgot-password.php">Забыл пароль?</a></p>
-	<p class="register"><a href="register2.php">Зареєструватись</a></p>
-  </form>
+<div><form method='post' action='login.php' class='login'><p><label for='login'>
+Ел. Почта:</label><input type='text' name='login' id='login'></p><p><label for='password'>
+Пароль:</label><input type='password' name='password' id='password' value=''>
+</p><p class='login-submit'><button type='submit' class='login-button'>Ввійти</button>
+</p><p class='forgot-password'><a href='forgot-password.php'>Забув пароль?</a></p><p class='register'>
+<a href='register2.php'>Зареєструватись</a></p></form>
 <body bgcolor='black'>
 <table border='0' width='70%' id='table1'>
 <tr style='color:#00ffd8'>
