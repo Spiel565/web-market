@@ -7,7 +7,7 @@ $street2=$_POST['street2'];
 $full=$_POST['full'];
 $zamov=$_POST['zamov'];
 $koment=$_POST['koment'];
-$zamovlennya="Кліент зробив таке замовлення:<br>".$zamov."На суму: ".$full."<br>Імя клієта: ".$name."<br>Моб.Телефон: ".$phone."<br>Ел.Пошта: ".$mail."<br>Місто доставки(+30 грн): ".$street."<br>Номер відділення: ".$street2."<br>Коментар до замовлення: ".$koment."<br><img src='PS-Store.jpg' align='center'>";
+$zamovlennya="Кліент зробив таке замовлення:<br>".$zamov."На суму: ".$full."<br>Імя клієта: ".$name."<br>Моб.Телефон: ".$phone."<br>Ел.Пошта: ".$mail."<br>Місто доставки(+30 грн): ".$street."<br>Номер відділення: ".$street2."<br>Коментар до замовлення: ".$koment."<br>";
 $adminmail='support@ps-store.com';
 $subject='Нове замовлення в Інтернет Магазині';
 $nameshop='PS Store';

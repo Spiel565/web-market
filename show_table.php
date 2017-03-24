@@ -10,6 +10,9 @@ function kill(input) {
 function tel(input) {
     input.value = input.value.replace(/[^0-9]/g, '');
 };
+function nom(input) {
+    input.value = input.value.replace(/[^0-9]/g, '');
+};
 </script>
 
 <?
@@ -55,7 +58,7 @@ $fs=$fs+$row['price'];
 <td colspan='3' align='left' style='color:#00ffd8;'>Місто доставки(Нова почта + 30 грн):</td><td colspan='2'><input type='text' id='street' size='16' class='info' autocomplete="on"></td>
 </tr>
 <tr>
-<td colspan='3' align='left' style='color:#00ffd8;'>Номер відділення(Нова почта):</td><td colspan='2'><input type='text' id='street2' size='5' class='info' autocomplete="on"></td>
+<td colspan='3' align='left' style='color:#00ffd8;'>Номер відділення(Нова почта):</td><td colspan='2'><input onkeyup="return nom(this);" onchange="return nom(this);" type='text' id='street2' size='5' class='info' autocomplete="on" maxlength='3'></td>
 </tr>
 <tr>
 <td colspan='3' align='left' style='color:#00ffd8;'>Коментар до замовлення(необов`язково):</td><td colspan='2'><input type='text' id='koment' size='35'autocomplete="on"></td>

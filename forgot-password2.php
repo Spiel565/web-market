@@ -29,4 +29,4 @@ $headers.="Content-type:text/html; charset=utf-8\r\n";
 $headers.="From:".$nameshop."<".$adminmail.">\r\n";
 $ok=mail($email,$subject,$zamovlennya,$headers);
 ?>
-<h1 align='center'>Тепер ввійдіть на свою Ел. почту і там буде ваш пароль</h1>
+<h1 align='center'>Тепер ввійдіть на свою Ел. почту і там буде ваш пароль <a href='index.php'> <b>Назад на головну</b></h1>
