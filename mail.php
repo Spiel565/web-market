@@ -1,12 +1,13 @@
 ﻿<?php
 $name=$_POST['name'];
-$phone=$_POST['phone'];  
+$phone=$_POST['phone'];
 $mail=$_POST['mail'];
 $street=$_POST['street'];
+$street2=$_POST['street2'];
 $full=$_POST['full'];
 $zamov=$_POST['zamov'];
 $koment=$_POST['koment'];
-$zamovlennya="Кліент зробив таке замовлення:<br>".$zamov."На суму: ".$full."<br>Імя клієта: ".$name."<br>Моб.Телефон: ".$phone."<br>Ел.Пошта: ".$mail."<br>Адреса доставки: ".$street."<br>Коментар до замовлення: ".$koment;
+$zamovlennya="Кліент зробив таке замовлення:<br>".$zamov."На суму: ".$full."<br>Імя клієта: ".$name."<br>Моб.Телефон: ".$phone."<br>Ел.Пошта: ".$mail."<br>Місто доставки(+30 грн): ".$street."<br>Номер відділення: ".$street2."<br>Коментар до замовлення: ".$koment;
 $adminmail='svstorchak2@gmail.com';
 $subject='Нове замовлення в Інтернет Магазині';
 $nameshop='PS Store';

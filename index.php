@@ -94,7 +94,7 @@ $(function(){
         duration: 1000
       }
     });
-$( "#dialog4" ).dialog( "option", "height", 430 );
+$( "#dialog4" ).dialog( "option", "height", 550 );
 $( "#dialog4" ).dialog( "option", "width", 700 );
     $( "#m1" ).click(function(){
 		$("#dialog1").dialog('open')
@@ -163,6 +163,7 @@ $( "#dialog4" ).dialog( "option", "width", 700 );
 					var phone=$('#phone').val()
 					var mail=$('#mail').val()
 					var street=$('#street').val()
+					var street2=$('#street2').val()
 					var koment=$('#koment').val()
 					var dozvil=0
 					$('.info').each(function(){
@@ -179,14 +180,14 @@ $( "#dialog4" ).dialog( "option", "width", 700 );
 					$.ajax({
 						type:'POST',
 						url:'mail.php',
-						data:({name,phone,mail,street,full,zamov,koment,}),
+						data:({name,phone,mail,street,street2,full,zamov,koment,}),
 						success:function(data){
 						}
 					})
 					$.ajax({
 						type:'POST',
 						url:'mail2.php',
-						data:({name,phone,mail,street,full,zamov,koment,}),
+						data:({name,phone,mail,street,street2,full,zamov,koment,}),
 						success:function(data){
 						}
 					})
@@ -209,7 +210,7 @@ $( "#dialog4" ).dialog( "option", "width", 700 );
 Пароль:</label><input type='password' name='password' id='password' value=''>
 </p><p class='login-submit'><button type='submit' class='login-button'>Ввійти</button>
 </p><p class='forgot-password'><a href='forgot-password.php'>Забув пароль?</a></p><p class='register'>
-<a href='register2.php'>Зареєструватись</a></p></form>
+<a href='register2.php'>Зареєструватись</a></p></form></div>
 <body bgcolor='black'>
 <table border='0' width='70%' id='table1'>
 <tr style='color:#00ffd8'>
