@@ -1,4 +1,4 @@
-<head><title>Відновлення паролю в інтернет магазині PS-Store</title></head>
+<head><title>Відновлення паролю в інтернет магазині PS-Store</title><link rel="shortcut icon" href="favicon.ico" type="image/x-icon"></head>
 <body bgcolor='black'>
   <font color='#00ffd8' face='Comic Sans MS'>
 <?
@@ -21,7 +21,7 @@ $q=mysql_query("SELECT password FROM logpass WHERE login = '$email'");
 $row=mysql_fetch_array($q);
 $pass=$row["password"];
 $zamovlennya="Ви запросили запит на пароль. Ваш пароль:<br>".$pass."<br>Приємних вам покупок!";
-$adminmail='svstorchak2@gmail.com';
+$adminmail='support@ps-store.com';
 $nameshop='PS Store';
 $subject='Ваш пароль від Інтернет Магазину';
 $headers="MIME-Version:1.0\r\n";

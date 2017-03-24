@@ -1,4 +1,4 @@
-<head><title>Реєстація в інтернет магазині PS-Store</title></head>
+<head><title>Реєстація в інтернет магазині PS-Store</title><link rel="shortcut icon" href="favicon.ico" type="image/x-icon"></head>
 <body bgcolor='black'>
   <font color='#00ffd8' face='Comic Sans MS'>
 <?php
@@ -20,7 +20,7 @@ $passsword=$_POST['passsword'];
 	mysql_query("SET CHARACTER SET 'utf8'");
 	mysql_query("INSERT INTO `logpass`(`login`, `password`) VALUES ('$login','$passsword')");
 	$zamovlennya="Ви зареєстувались в Інтернет Магазині PS-Store!<br>Дані для входу:<br>Ел. Почта: ".$login."<br>Пароль: ".$passsword."<br>Приємних вам покупок!";
-	$adminmail='svstorchak2@gmail.com';
+	$adminmail='support@ps-store.com';
 	$nameshop='PS Store';
 	$subject='Ви зареєстувались в Інтернет Магазині PS-Store';
 	$headers="MIME-Version:1.0\r\n";

@@ -1,6 +1,7 @@
 ﻿<html>
 <head>
 <title>PS-Store</title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 <script src='jquery.js'></script>
 <script src='jquery-ui.js'></script>
 <script src='jquery-ui.min.js'></script>

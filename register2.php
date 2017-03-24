@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Реєстація в інтернет магазині PS-Store</title>
+<title>Реєстація в інтернет магазині PS-Store</title><link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body bgcolor='black'>
   <font color='#00ffd8' face='Comic Sans MS'>

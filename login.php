@@ -1,4 +1,4 @@
-<head><title>Вхід в інтернет магазин PS-Store</title></head>
+<head><title>Вхід в інтернет магазин PS-Store</title><link rel="shortcut icon" href="favicon.ico" type="image/x-icon"></head>
 <body bgcolor='black'>
   <font color='#00ffd8' face='Comic Sans MS'>
 <?php
@@ -9,7 +9,7 @@ if (isset($_POST['login'])) { $login = $_POST['login']; if ($login == '') { unse
     if (isset($_POST['password'])) { $password=$_POST['password']; if ($password =='') { unset($password);} }
 if (empty($login) or empty($password))
     {
-    exit ("<body><div align='center'><br/><br/><br/><h1>Ви ввели не всю інформацчю, вернитесь назад и заповніть всі поля! " . "<a href='index.php'> <b>Назад на головну</b> </a></h1></div></body>");
+    exit ("<body><div align='center'><br/><br/><br/><h1>Ви ввели не всю інформацію, верніться назад и заповніть всі поля! " . "<a href='index.php'> <b>Назад на головну</b> </a></h1></div></body>");
     }
     $login = stripslashes($login);
     $login = htmlspecialchars($login);
