@@ -48,9 +48,15 @@ cursor:pointer;
 .whitee{
 	background:white;
 }
+#filter{
+	position: absolute;
+	left: 0px;
+	top: 200px;
+}
 </style>
 <script>
 $(function(){
+
 	    $( "#dialog1" ).dialog({
       autoOpen: false,
       show: {
@@ -203,9 +209,32 @@ $( "#dialog4" ).dialog( "option", "width", 700 );
 			}
 		})
 	})
+	$( "#accordion" ).accordion({
+			collapsible: true
+		});
+		var availableNames = [
+      "PS 4 Pro",
+      "Dualshock 4",
+      "PS 4 Slim",
+    ];
+    $( "#names" ).autocomplete({
+      source: availableNames
+    });
+		$( "#slider-range" ).slider({
+      range: true,
+      min: 0,
+      max: 14999,
+      values: [ 0, 14999 ],
+      slide: function( event, ui ) {
+        $( "#amount" ).val( "₴" + ui.values[ 0 ] + " - ₴" + ui.values[ 1 ] );
+      }
+    });
+    $( "#amount" ).val( "₴" + $( "#slider-range" ).slider( "values", 0 ) +
+      " - ₴" + $( "#slider-range" ).slider( "values", 1 ) );
 })
 
 </script>
+
 <div><form method='post' action='login.php' class='login'><p><label for='login'>
 Ел. Почта:</label><input type='text' name='login' id='login'></p><p><label for='password'>
 Пароль:</label><input type='password' name='password' id='password' value=''>
@@ -215,6 +244,26 @@ $( "#dialog4" ).dialog( "option", "width", 700 );
 <body bgcolor='black'>
 <table border='0' width='70%' id='table1'>
 <tr style='color:#00ffd8'>
+<div id="filter">
+	<div id="accordion">
+		<h3>За назвою</h3>
+  <div>
+    <p><label for="names">Назви товару: </label>
+  <input id="names"></p>
+  </div>
+  <h3>За ціною</h3>
+  <div>
+    <p><label for="amount">Ціна від і до:</label>
+  <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;"></p>
+	<div id="slider-range"></div>
+
+  </div>
+  <h3>За типом</h3>
+  <div>
+    <p></p>
+  </div>
+</div>
+</div>
 	<td rowspan='2' width='30%'><a href='http://s228.skill.in.ua/php/THIS_IS_MAGAS/index.php'><img src='PS-Store.jpg' width='150' height='100' alt='Інтернет Магазин PS-Store' title='Інтернет Магазин PS-Store - №1'></td>
 	<td width='35%'><h1>PS-Store</h1></td>
 	<td colspan='2' style='color:#00ffd8;'>
