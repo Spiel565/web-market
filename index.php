@@ -10,7 +10,7 @@
 <font color='#00ffd8' face='Comic Sans MS'>
 <style>
 #table1{
-margin:0px auto;
+margin: 0px 0px 0px 0px;
 }
 #dialog1{
 display:none;
@@ -47,11 +47,6 @@ cursor:pointer;
 }
 .whitee{
 	background:white;
-}
-#filter{
-	position: absolute;
-	left: 0px;
-	top: 200px;
 }
 </style>
 <script>
@@ -234,17 +229,10 @@ $( "#dialog4" ).dialog( "option", "width", 700 );
 })
 
 </script>
-
-<div><form method='post' action='login.php' class='login'><p><label for='login'>
-Ел. Почта:</label><input type='text' name='login' id='login'></p><p><label for='password'>
-Пароль:</label><input type='password' name='password' id='password' value=''>
-</p><p class='login-submit'><button type='submit' class='login-button'>Ввійти</button>
-</p><p class='forgot-password'><a href='forgot-password.php'>Забув пароль?</a></p><p class='register'>
-<a href='register2.php'>Зареєструватись</a></p></form></div>
 <body bgcolor='black'>
-<table border='0' width='70%' id='table1'>
+<table border='0' width='100%' id='table1'>
 <tr style='color:#00ffd8'>
-<div id="filter">
+<div id="filter" style='position:absolute;right:50px;top:220px;width:300px;'>
 	<div id="accordion">
 		<h3>За назвою</h3>
   <div>
@@ -252,7 +240,7 @@ $( "#dialog4" ).dialog( "option", "width", 700 );
   <input id="names"></p>
   </div>
   <h3>За ціною</h3>
-  <div>
+  <div width=>
     <p><label for="amount">Ціна від і до:</label>
   <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;"></p>
 	<div id="slider-range"></div>
@@ -260,9 +248,12 @@ $( "#dialog4" ).dialog( "option", "width", 700 );
   </div>
   <h3>За типом</h3>
   <div>
-    <p></p>
+    <p>Консолі<input type='checkbox' id='Koncoli' value='fr'><br></br>
+			Аксесуари<input type='checkbox' id='Aksesyaru' value='fr'><br></br></p>
   </div>
 </div>
+<input type='submit' value='3найти' style='margin:10px 0px 0px 120px;font-size:20px;color:#00ffd8;background:grey;'>
+
 </div>
 	<td rowspan='2' width='30%'><a href='http://s228.skill.in.ua/php/THIS_IS_MAGAS/index.php'><img src='PS-Store.jpg' width='150' height='100' alt='Інтернет Магазин PS-Store' title='Інтернет Магазин PS-Store - №1'></td>
 	<td width='35%'><h1>PS-Store</h1></td>
@@ -283,6 +274,12 @@ $( "#dialog4" ).dialog( "option", "width", 700 );
 <td colspan='4'><hr width='100%' color='#00ffd8' size='4'></td>
 </tr>
 </table>
+<div><form method='post' action='login.php' class='login'><p><label for='login'>
+Ел. Почта:</label><input type='text' name='login' id='login'></p><p><label for='password'>
+Пароль:</label><input type='password' name='password' id='password' value=''>
+</p><p class='login-submit'><button type='submit' class='login-button'>Ввійти</button>
+</p><p class='forgot-password'><a href='forgot-password.php'>Забув пароль?</a></p><p class='register'>
+<a href='register2.php'>Зареєструватись</a></p></form></div>
 <table width='70%' border='0' align='center'>
 <tr align='center' style='color:#00ffd8'>
 <td width='5%'>№</td><td width='5%'>Назва товару</td><td width='50%'>Опис Товару</td><td width='10%'>Ціна</td><td width='35%'>Фото</td>

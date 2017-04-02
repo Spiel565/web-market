@@ -10,7 +10,9 @@
       <input name="login" type="text" size='16'></input><br>
       Пароль<br>
       <input name="passsword" type="password" size='16'></input><br><br>
+      <div class="g-recaptcha" data-sitekey="6Lf7PBsUAAAAAOT7q-sdkvTSVH0iaxjpXkCL4pHs"></div><br>
       <input name="logpass" type="submit" size='6' value="Зареєстуватись"></input>
 </form>
+<script src='https://www.google.com/recaptcha/api.js'></script>
 </body>
 </html>
