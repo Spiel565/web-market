@@ -52,6 +52,19 @@ cursor:pointer;
 <script>
 $(function(){
 
+	$("#search").click(function(){
+    var filternames=$("#names").val()
+		$.ajax({
+			type:'POST',
+			url:'showtovar.php',
+			data:({filternames}),
+			success:function(data){
+					
+			}
+
+	})
+	})
+
 	    $( "#dialog1" ).dialog({
       autoOpen: false,
       show: {
@@ -252,7 +265,7 @@ $( "#dialog4" ).dialog( "option", "width", 700 );
 			Аксесуари<input type='checkbox' id='Aksesyaru' value='fr'><br></br></p>
   </div>
 </div>
-<input type='submit' value='3найти' style='margin:10px 0px 0px 120px;font-size:20px;color:#00ffd8;background:grey;'>
+<input type='submit' value='3найти' id="search" style='margin:10px 0px 0px 120px;font-size:20px;color:#00ffd8;background:grey;'>
 
 </div>
 	<td rowspan='2' width='30%'><a href='http://s228.skill.in.ua/php/THIS_IS_MAGAS/index.php'><img src='PS-Store.jpg' width='150' height='100' alt='Інтернет Магазин PS-Store' title='Інтернет Магазин PS-Store - №1'></td>

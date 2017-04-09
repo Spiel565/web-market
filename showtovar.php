@@ -1,6 +1,11 @@
 <?php
+$filternames=$_POST['filternames'];
 include 'start.php';
-$q=mysql_query("SELECT * FROM Tovary_Magasa");
+if ($filternames!=''){
+$q=mysql_query("SELECT * FROM Tovary_Magasa WHERE Name = '$filternames'");
+}else if ($filternames==''){
+	$q=mysql_query("SELECT * FROM Tovary_Magasa");
+}
 for($i=1;$i<=mysql_num_rows($q);$i++)
 {
 	$row=mysql_fetch_array($q);
